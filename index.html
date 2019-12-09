@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Document</title>
+</head>
+
+<body onload="initGame()">
+    <h1> Mine Sweeper </h1>
+    <header>
+        <h2 class="lives-remaining" onclick="initGame()"> <span>3</span> Lives Remaining </h2>
+        <div class="game-state" onclick="initGame()"></div>
+        <div class="timer"></div>
+    </header>
+    <div class="board-container">
+        <table class="table">
+            <tbody>
+
+            </tbody>
+        </table>
+        <button class="safe-click-button" onclick="showSafeClick()"> <span>3</span> Safe Clicks Remaining </button>
+        <img src="img/hint.png" class="hint exist" onclick="hintClicked()">
+        <img src="img/hint.png" class="hint exist" onclick="hintClicked()">
+        <img src="img/hint.png" class="hint exist" onclick="hintClicked()">
+        <br>
+        <button class="game-mode" onclick="gGameMode = easyGame, initGame()">Easy</button>
+        <button class="game-mode" onclick="gGameMode = intermediateGame, initGame()">Intermediate</button>
+        <button class="game-mode" onclick="gGameMode = hardGame, initGame()">Hard</button>
+        <button class="game-mode" onclick="customButtonClicked()">Custom</button>
+        <br>
+        <div class="custom">
+                <input type = "hidden"
+                id = "rowCount"
+                placeholder = "How many rows?" />
+                <input type="hidden"
+                id = "colCount"
+                placeholder = "How many columns?">
+                <input type="hidden"
+                id = "mineAmount"
+                placeholder = "How many mines?">
+                <button class="go" onclick="CreateCustom()" style="display: none">Go!</button>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/util.js"></script>
+</body>
+
+</html>
